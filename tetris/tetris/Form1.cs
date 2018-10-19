@@ -19,19 +19,7 @@ namespace tetris
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            Game game = new Game();
-            var g = this.CreateGraphics();
-
-            Square[,] square = new Square[100,100];
-
-            for(int i = 1; i<=20; ++i)
-                for(int j = 1; j<=10; ++j)
-                {
-                    square[i,j] = new Square(i, j, g, Color.Black);
-                }
-
-            square[3, 5].ChangeColor(Color.White);   
+            Game game = new Game(this);
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -46,7 +34,6 @@ namespace tetris
 
         private void button6_Click(object sender, EventArgs e)
         {
-            
         }
     }
 }
