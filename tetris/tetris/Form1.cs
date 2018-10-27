@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace tetris
 {
@@ -29,12 +30,11 @@ namespace tetris
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-           
+            
         }
 
         private void Form1_KeyUp(object sender, KeyEventArgs e)
         {
-
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -80,6 +80,23 @@ namespace tetris
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Debug.WriteLine(e.KeyChar.ToString());
+
+            if (e.KeyChar == 'w' && game.piece.CanMove(1, 0))
+                game.piece.Move(1, 0);
+
+            if (e.KeyChar == 's' && game.piece.CanMove(-1, 0))
+                game.piece.Move(-1, 0);
+
+            if (e.KeyChar == 'd' && game.piece.CanMove(0, 1))
+                game.piece.Move(0, 1);
+
+            if (e.KeyChar == 'a' && game.piece.CanMove(0, -1))
+                game.piece.Move(0, -1);
         }
     }
 }

@@ -32,7 +32,10 @@ namespace tetris
                     game.squares[_i[i], _j[i]].SetColor(color);
                 }
             }
-            else game.EndGame();
+            else
+            {
+                game.EndGame();
+            }
         }
 
         public bool CanMove(int ii, int jj)
