@@ -9,7 +9,8 @@ namespace tetris
 {
     class Square
     {
-        Game game; int _x, _y, _width = Game.T_WIDTH;
+        Game game;
+        int _x, _y, _width = Game.T_WIDTH;
         static Color originalColor = Color.Black;
         Graphics g; Color c;
 
@@ -33,9 +34,11 @@ namespace tetris
         }
 
         private void Draw()
-        { 
+        {
             Pen p = new Pen(c);
-            g.DrawRectangle(p, _x + 1, _y + 1, _width - 2 , _width - 2);
+            g.DrawRectangle(p, _x + 1, _y + 1, _width - 2, _width - 2);
+            SolidBrush brush = new SolidBrush(c);
+            g.FillRectangle(brush, _x + 1, _y + 1, _width - 2, _width - 2);
         }
 
         public void SetColor(Color color)

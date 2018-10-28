@@ -7,21 +7,22 @@ using System.Drawing;
 
 namespace tetris
 {
-    class SquarePiece : Piece
+    class LPiece : Piece
     {
-        private int[] _i = new int[] {1, 1, 2, 2};
-        private int[] _j = new int[] {1, 2, 1, 2};
+        private int[] _i = new int[] { 1, 1, 1, 2 };
+        private int[] _j = new int[] { 1, 2, 3, 3 };
         Game game;
         public Color color = Color.Red;
-        public SquarePiece()
-        { }
+
         private void Adjust()
         {
             for (int i = 0; i < 4; ++i)
-                _j[i] += (Game.J_TILES-1) / 2;
+                _j[i] += (Game.J_TILES - 1) / 2;
         }
+        public LPiece()
+        { }
 
-        public SquarePiece(Game g, Color c)
+        public LPiece (Game g, Color c)
         {
             game = g;
             color = c;
@@ -30,7 +31,7 @@ namespace tetris
             {
                 for (int i = 0; i < 4; ++i)
                 {
-                    game.squares[_i[i], _j[i]].SetColor(color); 
+                    game.squares[_i[i], _j[i]].SetColor(color);
                 }
             }
             else
@@ -38,7 +39,6 @@ namespace tetris
                 game.EndGame();
             }
         }
-
         public override bool CanMove(int ii, int jj)
         {
             for (int t = 0; t < 4; ++t)

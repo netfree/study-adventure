@@ -40,7 +40,7 @@ namespace tetris
             for (int i = 1; i <= I_TILES; ++i)
                 for (int j = 1; j <= J_TILES; ++j)
                 {
-                    squares[i, j].SetColor(Color.Gray);
+                    squares[i, j].SetColor(Color.LightGray);
                     squares[i, j].Solid = false;
                 }
         }
@@ -51,7 +51,8 @@ namespace tetris
         }
 
 
-        public SquarePiece piece;
+        public Piece piece;
+       
 
 
         public Game(Form1 f)
@@ -59,7 +60,8 @@ namespace tetris
             form1 = f;
             g = form1.CreateGraphics();
             DrawBoard();
-            piece = new SquarePiece(this, Color.Red);
+            //piece = new SquarePiece(this, Color.Red);
+            piece = new LPiece(this, Color.Blue);
         }
 
         public void EndGame()
