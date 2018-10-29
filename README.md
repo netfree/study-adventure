@@ -1,2 +1,7 @@
 # study-adventure
-Easy C# Tetris game. 
+Easy C# Tetris game.
+
+Botezan Vlad
+Andreea Savos
+Ionel Timis
+Andrei Muntean
