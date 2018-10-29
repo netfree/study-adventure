@@ -130,7 +130,7 @@ namespace tetris
                 Debug.WriteLine(rand.ToString());
 
                 if (rand == 1)
-                    game.piece = new LPiece(game, Color.Red);
+                    game.piece = new ZPiece(game, Color.Red);
                 else
                     game.piece = new SquarePiece(game, Color.Blue);
             }
