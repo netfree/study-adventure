@@ -35,7 +35,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.UP = new System.Windows.Forms.Button();
             this.a1 = new System.Windows.Forms.Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.labelScore = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -102,10 +102,10 @@
             this.a1.UseVisualStyleBackColor = true;
             this.a1.Click += new System.EventHandler(this.button6_Click);
             // 
-            // timer1
+            // timer
             // 
-            this.timer1.Interval = 200;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timer.Interval = 200;
+            this.timer.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // label1
             // 
@@ -159,7 +159,7 @@
 
         private System.Windows.Forms.Button UP;
         private System.Windows.Forms.Button a1;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelScore;
     }
