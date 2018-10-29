@@ -40,7 +40,6 @@ namespace tetris
 
         private void button6_Click(object sender, EventArgs e)
         {
-            //game.piece.color = Color.Black;
             game.piece.Move(0, 0);
             game.piece.Solidify();
             game.piece = new SquarePiece(game, Color.Red);

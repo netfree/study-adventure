@@ -84,7 +84,7 @@ namespace tetris
                 piece.Solidify();
 
             /// DEBUG ONLY
-            rand = 3;
+            //rand = 3;
             /// 
 
 
