@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace tetris
 {
-    class Piece
+    abstract class Piece
     {
+        public abstract bool CanMove(int ii, int jj);
+        public abstract void Move(int ii, int jj);
+        public abstract void Solidify();
     }
 }

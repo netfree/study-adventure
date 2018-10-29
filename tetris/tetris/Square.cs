@@ -9,65 +9,56 @@ namespace tetris
 {
     class Square
     {
-        int _x, _y;
 
-        int _dim = 20;
-        
-        public int X
+        Game game;
+        int _x, _y, _width = Game.T_WIDTH;
+        static Color originalColor = Color.Black;
+        Graphics g; Color c;
+
+        private bool _active = false;
+        private bool _solid = false;
+        private bool _drawn = false;
+
+        public Square(Game b)
+        {
+            game = b;
+            g = game.G;
+        }
+
+        public void SetPosition(int i, int j)
+        {
+            if (i * j > 0)
+            {
+                _x = Game.X_BOARD + _width * (j - 1);
+                _y = Game.Y_BOARD + _width * (i - 1);
+            }
+        }
+
+        private void Draw()
+        {
+            Pen p = new Pen(c);
+            g.DrawRectangle(p, _x + 1, _y + 1, _width - 2, _width - 2);
+            SolidBrush brush = new SolidBrush(c);
+            g.FillRectangle(brush, _x + 1, _y + 1, _width - 2, _width - 2);
+        }
+
+        public void SetColor(Color color)
+        {
+            c = color;
+            Draw();
+        }
+
+        public bool Solid
         {
             set
             {
-                if(value > 0)
-                    _x = _dim + _dim * (value - 1);
+                _solid = value;
             }
+
             get
             {
-                return _x;
+                return _solid;
             }
         }
-
-        public int Y
-        {
-            set
-            {
-                if (value > 0)
-                    _y = _dim + _dim * (value - 1);
-            }
-            get
-            {
-                return _y;
-            }
-        }
-
-        Graphics my;
-
-        public void Draw(Graphics g, Color c)
-        {
-            my = g;
-            Pen p = new Pen(c);
-            g.DrawRectangle(p, _x + 1, _y + 1, _dim - 2 , _dim - 2);
-        }
-
-        public void ChangeColor (Color c)
-        {
-            Pen p = new Pen(c);
-            my.DrawRectangle(p, _x + 1, _y + 1, _dim - 2, _dim - 2);
-        }
-
-        public Square(int i, int j, Graphics g, Color c)
-        {
-            X = j;
-            Y = i;
-            this.Draw(g, c);
-        }
-
-        public Square(int i, int j)
-        {
-            X = j;
-            Y = i;
-        }
-
-      
-
     }
 }
