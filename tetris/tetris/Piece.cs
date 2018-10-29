@@ -10,5 +10,6 @@ namespace tetris
     {
         public abstract bool CanMove(int ii, int jj);
         public abstract void Move(int ii, int jj);
+        public abstract void Solidify();
     }
 }

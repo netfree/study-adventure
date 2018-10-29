@@ -62,7 +62,7 @@ namespace tetris
                 game.squares[_i[t], _j[t]].SetColor(color);
         }
 
-        public void Solidify()
+        public override void Solidify()
         {
             for (int t = 0; t < 4; ++t)
                 game.squares[_i[t], _j[t]].Solid = true;

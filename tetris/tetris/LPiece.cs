@@ -47,6 +47,12 @@ namespace tetris
             return true;
         }
 
+        public override void Solidify()
+        {
+            for (int t = 0; t < 4; ++t)
+                game.squares[_i[t], _j[t]].Solid = true;
+        }
+
         public override void Move(int ii, int jj)
         {
             for (int t = 0; t < 4; ++t)
@@ -62,10 +68,6 @@ namespace tetris
                 game.squares[_i[t], _j[t]].SetColor(color);
         }
 
-        public void Solidify()
-        {
-            for (int t = 0; t < 4; ++t)
-                game.squares[_i[t], _j[t]].Solid = true;
-        }
+      
     }
 }

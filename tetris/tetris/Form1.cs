@@ -41,7 +41,7 @@ namespace tetris
         {
             //game.piece.color = Color.Black;
             game.piece.Move(0, 0);
-            //game.piece.Solidify();
+            game.piece.Solidify();
             game.piece = new SquarePiece(game, Color.Red);
         }
 
@@ -97,6 +97,11 @@ namespace tetris
 
             if (e.KeyChar == 'a' && game.piece.CanMove(0, -1))
                 game.piece.Move(0, -1);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
