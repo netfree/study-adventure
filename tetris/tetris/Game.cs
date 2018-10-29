@@ -71,5 +71,26 @@ namespace tetris
             Debug.WriteLine("AI PIERDUT!");
         }
 
+        public void NewPiece()
+        {
+            Random rnd = new Random();
+            int rand = rnd.Next(1, 6);
+            
+            Color[] clr = new Color[] { Color.Red, Color.Green, Color.Blue, Color.Yellow };
+            int rand_color = rnd.Next(0, clr.Length);
+            piece.Solidify();
+            if (rand == 1)
+                piece = new ZPiece(this, clr[rand_color]);
+            else if (rand == 2)
+               piece = new IPiece(this, clr[rand_color]);
+            else if (rand == 3)
+                piece = new SquarePiece(this, clr[rand_color]);
+            else if (rand == 4)
+                piece = new LPiece(this, clr[rand_color]);
+            else
+                piece = new TPiece(this, clr[rand_color]);
+
+        }
+
     }
 }

@@ -26,6 +26,7 @@ namespace tetris
         private void button1_Click(object sender, EventArgs e)
         {
             game = new Game(this);
+            timer1.Enabled = true;
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -49,6 +50,10 @@ namespace tetris
         {
             if (game.piece.CanMove(1, 0))
                 game.piece.Move(1, 0);
+            else
+            { 
+                game.NewPiece();    
+            }
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -73,7 +78,7 @@ namespace tetris
         {
             if (game.piece.CanMove(0, 1))
                 game.piece.Move(0, 1);
-
+          
 
         }
 
@@ -122,24 +127,7 @@ namespace tetris
 
             if (e.KeyChar == 'q')
             {
-                game.piece.Solidify();
-
-                Random rnd = new Random();
-                int rand = rnd.Next(1, 6);
-
-                Debug.WriteLine(rand.ToString());
-
-                if (rand == 1)
-                    game.piece = new ZPiece(game, Color.Red);
-                else if(rand == 2)
-                    game.piece = new IPiece(game, Color.Blue);
-                else if (rand == 3)
-                    game.piece = new SquarePiece(game, Color.Blue);
-                else if (rand == 4)
-                    game.piece = new LPiece(game, Color.Blue);
-                else
-                    game.piece = new TPiece(game, Color.Blue);
-
+                game.NewPiece();
             }
         }
 
