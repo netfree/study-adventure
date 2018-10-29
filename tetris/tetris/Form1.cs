@@ -123,7 +123,16 @@ namespace tetris
             if (e.KeyChar == 'q')
             {
                 game.piece.Solidify();
-                game.piece = new SquarePiece(game, Color.Red);
+
+                Random rnd = new Random();
+                int rand = rnd.Next(1, 3);
+
+                Debug.WriteLine(rand.ToString());
+
+                if (rand == 1)
+                    game.piece = new LPiece(game, Color.Red);
+                else
+                    game.piece = new SquarePiece(game, Color.Blue);
             }
         }
     }
