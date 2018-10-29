@@ -125,14 +125,21 @@ namespace tetris
                 game.piece.Solidify();
 
                 Random rnd = new Random();
-                int rand = rnd.Next(1, 3);
+                int rand = rnd.Next(1, 6);
 
                 Debug.WriteLine(rand.ToString());
 
                 if (rand == 1)
                     game.piece = new ZPiece(game, Color.Red);
-                else
+                else if(rand == 2)
+                    game.piece = new IPiece(game, Color.Blue);
+                else if (rand == 3)
                     game.piece = new SquarePiece(game, Color.Blue);
+                else if (rand == 4)
+                    game.piece = new LPiece(game, Color.Blue);
+                else
+                    game.piece = new TPiece(game, Color.Blue);
+
             }
         }
     }
