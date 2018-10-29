@@ -37,6 +37,7 @@
             this.a1 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
+            this.labelScore = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -115,12 +116,22 @@
             this.label1.TabIndex = 6;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // labelScore
+            // 
+            this.labelScore.AutoSize = true;
+            this.labelScore.Location = new System.Drawing.Point(326, 221);
+            this.labelScore.Name = "labelScore";
+            this.labelScore.Size = new System.Drawing.Size(0, 13);
+            this.labelScore.TabIndex = 7;
+            this.labelScore.Click += new System.EventHandler(this.label2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(446, 506);
+            this.Controls.Add(this.labelScore);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.a1);
             this.Controls.Add(this.UP);
@@ -150,6 +161,7 @@
         private System.Windows.Forms.Button a1;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelScore;
     }
 }
 

@@ -66,6 +66,7 @@ namespace tetris
         {
             for (int t = 0; t < 4; ++t)
                 game.squares[_i[t], _j[t]].Solid = true;
+            game.CheckGame();
         }
     }
 }

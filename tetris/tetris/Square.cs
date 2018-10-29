@@ -13,7 +13,7 @@ namespace tetris
         Game game;
         int _x, _y, _width = Game.T_WIDTH;
         static Color originalColor = Color.Black;
-        Graphics g; Color c;
+        Graphics g; public Color c;
 
         private bool _active = false;
         private bool _solid = false;

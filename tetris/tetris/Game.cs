@@ -15,6 +15,7 @@ namespace tetris
 
         Form1 form1;
         Graphics g;
+        public int Score = 0; 
         public const int X_BOARD = 10, Y_BOARD = 10;
         public const int I_TILES = 20, J_TILES = 10;
         public const int T_WIDTH = 24;
@@ -63,7 +64,7 @@ namespace tetris
             g = form1.CreateGraphics();
             DrawBoard();
             //piece = new SquarePiece(this, Color.Red);
-            piece = new LPiece(this, Color.Blue);
+            NewPiece();
         }
 
         public void EndGame()
@@ -78,7 +79,15 @@ namespace tetris
             
             Color[] clr = new Color[] { Color.Red, Color.Green, Color.Blue, Color.Yellow };
             int rand_color = rnd.Next(0, clr.Length);
-            piece.Solidify();
+
+            if(piece != null)
+                piece.Solidify();
+
+            /// DEBUG ONLY
+            rand = 3;
+            /// 
+
+
             if (rand == 1)
                 piece = new ZPiece(this, clr[rand_color]);
             else if (rand == 2)
@@ -92,5 +101,27 @@ namespace tetris
 
         }
 
+        public void CheckGame()
+        {
+            for (int i = 1; i <= I_TILES; ++i)
+            {
+                bool full = true;
+                for (int j = 1; j <= J_TILES; ++j)
+                    if (squares[i, j].Solid == false)
+                        full = false;
+                if (full)
+                {
+                    Score++; 
+
+                    for (int ii = i; ii > 1; --ii)
+                        for (int jj = 1; jj <= J_TILES; ++jj)
+                        {
+                            squares[ii, jj].SetColor(squares[ii - 1, jj].c);
+                            squares[ii, jj].Solid = squares[ii - 1, jj].Solid;
+                        }
+                    
+                }
+            }
+        }
     }
 }
