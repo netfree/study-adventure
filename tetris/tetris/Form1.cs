@@ -103,5 +103,28 @@ namespace tetris
         {
 
         }
+
+        private void button1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Debug.WriteLine(e.KeyChar.ToString());
+
+            if (e.KeyChar == 's' && game.piece.CanMove(1, 0))
+                game.piece.Move(1, 0);
+
+            if (e.KeyChar == 'w' && game.piece.CanMove(-1, 0))
+                game.piece.Move(-1, 0);
+
+            if (e.KeyChar == 'd' && game.piece.CanMove(0, 1))
+                game.piece.Move(0, 1);
+
+            if (e.KeyChar == 'a' && game.piece.CanMove(0, -1))
+                game.piece.Move(0, -1);
+
+            if (e.KeyChar == 'q')
+            {
+                game.piece.Solidify();
+                game.piece = new SquarePiece(game, Color.Red);
+            }
+        }
     }
 }
