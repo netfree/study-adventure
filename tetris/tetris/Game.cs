@@ -7,10 +7,12 @@ using System.Drawing;
 using System.Diagnostics;
 using System.Threading;
 
+
 namespace tetris
 {
     class Game
     {
+
         Form1 form1;
         Graphics g;
         public const int X_BOARD = 10, Y_BOARD = 10;

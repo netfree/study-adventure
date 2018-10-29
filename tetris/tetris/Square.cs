@@ -9,6 +9,7 @@ namespace tetris
 {
     class Square
     {
+
         Game game;
         int _x, _y, _width = Game.T_WIDTH;
         static Color originalColor = Color.Black;
