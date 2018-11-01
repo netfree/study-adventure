@@ -68,6 +68,10 @@ namespace tetris
                 game.squares[_i[t], _j[t]].Solid = true;
             game.CheckGame();
         }
+
+        public override void RotateClockwise()
+        {
+        }
     }
 }
 

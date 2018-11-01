@@ -21,8 +21,6 @@ namespace tetris
             
         }
 
-      
-
         private void button1_Click(object sender, EventArgs e)
         {
             game = new Game(this);
@@ -115,23 +113,17 @@ namespace tetris
 
             try
             {
-
                 if (e.KeyChar == 's' && game.piece.CanMove(1, 0))
                     game.piece.Move(1, 0);
 
                 if (e.KeyChar == 'w' && game.piece.CanMove(-1, 0))
-                    game.piece.Move(-1, 0);
+                    game.piece.RotateClockwise();
 
                 if (e.KeyChar == 'd' && game.piece.CanMove(0, 1))
                     game.piece.Move(0, 1);
 
                 if (e.KeyChar == 'a' && game.piece.CanMove(0, -1))
                     game.piece.Move(0, -1);
-
-                if (e.KeyChar == 'q')
-                {
-                    game.NewPiece();
-                }
             }
             catch
             {

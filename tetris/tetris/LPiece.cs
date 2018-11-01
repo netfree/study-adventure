@@ -69,6 +69,8 @@ namespace tetris
                 game.squares[_i[t], _j[t]].SetColor(color);
         }
 
-      
+        public override void RotateClockwise()
+        {
+        }
     }
 }
