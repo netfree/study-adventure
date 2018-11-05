@@ -34,6 +34,8 @@ namespace tetris
             }
         }
 
+
+
         private void Draw()
         {
             Pen p = new Pen(c);

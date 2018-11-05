@@ -69,8 +69,43 @@ namespace tetris
                 game.squares[_i[t], _j[t]].SetColor(color);
         }
 
+
         public override void RotateClockwise()
         {
+            int c_i = _i[2];
+            int c_j = _j[2];
+            int[] bk_i = new int[4];
+            int[] bk_j = new int[4];
+            for (int i = 0; i < 4; ++i)
+            {
+                bk_i[i] = _i[i];
+                bk_j[i] = _j[i];
+                _i[i] = (bk_j[i] - c_j) + c_i;
+                _j[i] = -(bk_i[i] - c_i) + c_j;
+            }
+
+
+            if (CanMove(0, 0))
+            {
+                for (int i = 0; i < 4; ++i)
+                {
+                    game.squares[bk_i[i], bk_j[i]].SetColor(Color.LightGray);
+                }
+
+                for (int i = 0; i < 4; ++i)
+                {
+                    game.squares[_i[i], _j[i]].SetColor(color);
+                }
+            }
+            else
+            {
+                for (int i = 0; i < 4; ++i)
+                {
+                    _i[i] = bk_i[i];
+                    _j[i] = bk_j[i];
+                }
+            }
+
         }
     }
 }

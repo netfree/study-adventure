@@ -9,16 +9,22 @@ namespace tetris
 {
     class SquarePiece : Piece
     {
-        private int[] _i = new int[] {1, 1, 2, 2};
-        private int[] _j = new int[] {1, 2, 1, 2};
+        private int[] _i = new int[] {-1, -1, 0, 0};
+        private int[] _j = new int[] {-1, 0, -1, 0};
         Game game;
         public Color color = Color.Red;
         public SquarePiece()
         { }
+
+
         private void Adjust()
         {
             for (int i = 0; i < 4; ++i)
-                _j[i] += (Game.J_TILES-1) / 2;
+            {
+                _j[i] += (Game.J_TILES) / 2 + 1;
+                _i[i] += 2;
+             }
+                
         }
 
         public SquarePiece(Game g, Color c)
@@ -69,8 +75,43 @@ namespace tetris
             game.CheckGame();
         }
 
+
         public override void RotateClockwise()
         {
+            int c_i = _i[2];
+            int c_j = _j[2];
+            int[] bk_i = new int[4];
+            int[] bk_j = new int[4];
+            for (int i = 0; i < 4; ++i)
+            {
+                bk_i[i] = _i[i];
+                bk_j[i] = _j[i];
+                _i[i] = (bk_j[i] - c_j) + c_i;
+                _j[i] = -(bk_i[i] - c_i) + c_j;
+            }
+
+
+            if (CanMove(0, 0))
+            {
+                for (int i = 0; i < 4; ++i)
+                {
+                    game.squares[bk_i[i], bk_j[i]].SetColor(Color.LightGray);
+                }
+
+                for (int i = 0; i < 4; ++i)
+                {
+                    game.squares[_i[i], _j[i]].SetColor(color);
+                }
+            }
+            else
+            {
+                for (int i = 0; i < 4; ++i)
+                {
+                    _i[i] = bk_i[i];
+                    _j[i] = bk_j[i];
+                }
+            }
+
         }
     }
 }

@@ -20,8 +20,8 @@ namespace tetris
         {
             for (int i = 0; i < 4; ++i)
             {
-                _j[i] += (Game.J_TILES - 1) / 2 + 1;
-                _i[i] += 2;
+                _j[i] += (Game.J_TILES - 1) / 2 + 1; /// MODIFICAT
+                _i[i] += 2; /// ADAUGAT
             }
         }
 

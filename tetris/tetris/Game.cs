@@ -67,9 +67,15 @@ namespace tetris
             NewPiece();
         }
 
+        public bool ended = false;
+
         public void EndGame()
         {
-            Debug.WriteLine("AI PIERDUT!");
+            if (ended == false)
+            {
+                form1.END();
+                ended = true;
+            }
         }
 
         public void NewPiece()
@@ -83,21 +89,16 @@ namespace tetris
             if(piece != null)
                 piece.Solidify();
 
-            /// DEBUG ONLY
-            //rand = 3;
-            /// 
-
-
-            //if (rand == 1)
+            if (rand == 1)
                 piece = new ZPiece(this, clr[rand_color]);
-            //else if (rand == 2)
-            //   piece = new IPiece(this, clr[rand_color]);
-            //else if (rand == 3)
-            //    piece = new SquarePiece(this, clr[rand_color]);
-            //else if (rand == 4)
-            //    piece = new LPiece(this, clr[rand_color]);
-            //else
-            //    piece = new TPiece(this, clr[rand_color]);
+            else if (rand == 2)
+                piece = new IPiece(this, clr[rand_color]);
+            else if (rand == 3)
+                piece = new SquarePiece(this, clr[rand_color]);
+            else if (rand == 4)
+                piece = new LPiece(this, clr[rand_color]);
+            else
+                piece = new TPiece(this, clr[rand_color]);
 
         }
 
