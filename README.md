@@ -138,3 +138,6 @@ Este cea mai importantă clasă din joc deoarece aici se află declarate toate *
 * verifică dacă jocul s-a terminat
 * generează o nouă piesă aleatoriu
 * se verifică dacă se poate marca un punct și totodată elimină linia care a generat punctul
+
+# ALte detalii remarcabile:
+* **proiectul este open-source și este disponibil la adresa: github.com/netfree/study-adventure**. Invităm pe oricine să aducă înbunătățiri.
