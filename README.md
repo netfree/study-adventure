@@ -82,7 +82,7 @@ Rotește piesa în sensul acelor de ceasoric prin folosirea unui punct fix și r
 
 >  noul i primește vechiul j
 >  
-noul j primește **minus** vechiul j
+> noul j primește **minus** vechiul i
 
 coordonatele sunt date în funcție de punctul fix al pisei
 
@@ -139,5 +139,5 @@ Este cea mai importantă clasă din joc deoarece aici se află declarate toate *
 * generează o nouă piesă aleatoriu
 * se verifică dacă se poate marca un punct și totodată elimină linia care a generat punctul
 
-## ALte detalii remarcabile:
+## Alte detalii remarcabile:
 * **proiectul este open-source și este disponibil la adresa: github.com/netfree/study-adventure**. Invităm pe oricine să aducă înbunătățiri.
