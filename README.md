@@ -23,7 +23,7 @@ Porblema a fost semnalată încă din stadiul de proiectare, însă a rămas ner
 ## Specificații Hardware și Software necesare
 Aplicația a fost proiectată pentru Windows 10. A fost testată cu succes și pe WIndows 8, însă nu au fost efectuate teste extinse.
 
-# Descierea Logică a aplicației
+## Descierea Logică a aplicației
 Aplicația implementează următoarele componente:
 * o **tablă** ce conține pătrate (obiecte de tip Square) pe care se desfășoară jocul
 * **o piesa activă** pe care utilizatorul poate să o rotească și să o miște dreapta stânga
@@ -139,5 +139,5 @@ Este cea mai importantă clasă din joc deoarece aici se află declarate toate *
 * generează o nouă piesă aleatoriu
 * se verifică dacă se poate marca un punct și totodată elimină linia care a generat punctul
 
-# ALte detalii remarcabile:
+## ALte detalii remarcabile:
 * **proiectul este open-source și este disponibil la adresa: github.com/netfree/study-adventure**. Invităm pe oricine să aducă înbunătățiri.
